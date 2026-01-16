@@ -4,6 +4,17 @@ Este repositório contém **somente o front-end já buildado** (arquivos estáti
 
 Objetivo: deixar um pacote enxuto para você usar no Bolt/refazer a UI sem precisar carregar o restante do Electron (executáveis, DLLs, locales etc.).
 
+## Sobre o tamanho (Bolt)
+
+Algumas ferramentas (ex.: Bolt) têm limite de tamanho na importação do repo.
+
+- `main` (padrão): versão **reduzida** para caber nesses limites (mantém assets/configs; remove JS bundle e fontes pesadas).
+- `full`: versão **completa** (inclui `app/dist/js` e fontes).
+
+Para pegar a versão completa:
+
+`git checkout full`
+
 ## O que tem aqui
 
 - `app/dist/` — front-end buildado (HTML/CSS/JS/assets)
