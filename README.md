@@ -1,8 +1,8 @@
-# only-front
+# attack-shark-v4-R82HE-FRONT
 
-Esta pasta contém **somente o front-end** (arquivos estáticos já buildados) + assets/configs de marca, extraídos do bundle do app.
+Este repositório contém **somente o front-end já buildado** (arquivos estáticos) + assets/configs de marca, extraídos do bundle do app.
 
-Objetivo: deixar um "pacote leve" para você subir no Bolt/refazer a UI sem carregar o restante do Electron (executáveis, DLLs, locales etc.).
+Objetivo: deixar um pacote enxuto para você usar no Bolt/refazer a UI sem precisar carregar o restante do Electron (executáveis, DLLs, locales etc.).
 
 ## O que tem aqui
 
@@ -10,12 +10,21 @@ Objetivo: deixar um "pacote leve" para você subir no Bolt/refazer a UI sem carr
 - `app/company/` — logos/imagens/configs por empresa
 - `app/APPVersion.json` e `app/CurrentCompany.json` — metadados usados pelo app
 
+## Preview local (opcional)
+
+Como isso é estático, dá para abrir direto no browser, mas o ideal é servir via HTTP:
+
+- Python: `python -m http.server 5173` (na pasta raiz do repo) e abra `http://localhost:5173/app/dist/`
+- Node: `npx serve .` e abra `/app/dist/`
+
 ## Como usar no Bolt
 
-- Aponte o Bolt para esta pasta `only-front/`.
-- Use `app/dist/index.html` como referência do que existe hoje (rotas, assets, estrutura de build).
+- Aponte o Bolt para a raiz deste repo.
+- Use `app/dist/index.html` como referência do que existe hoje (rotas, assets, estrutura do build).
+- Reaproveite os arquivos de `app/company/` (logo, imagens e configs) para manter a identidade visual.
 
 ## Observações
 
-- Isso **não** é o código-fonte original (não tem `src/`). É a saída de build.
-- Se você quiser reconstruir o front de verdade, o ideal é gerar um novo projeto (React/Vite/etc.) e copiar/aproveitar apenas assets e comportamento que fizer sentido.
+- Isso **não** é o código-fonte original (não tem `src/`). É a saída final do build.
+- Para “refazer o front”, o caminho mais saudável é criar um novo projeto (React/Vite/etc.) e gerar um novo `dist` compatível.
+- O app completo (Electron/bundle) fica no repo principal: https://github.com/ferpgshy/attack-shark-v4-R82HE
