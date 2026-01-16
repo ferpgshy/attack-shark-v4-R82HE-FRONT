@@ -1,0 +1,13 @@
+# Slim main branch for Bolt (keep heavy assets in branch `full`)
+
+# Bundled JS chunks (huge number of files)
+app/dist/js/
+
+# Large font bundles
+app/dist/assets/fonts/
+
+# Large license bundle (keep in `full`)
+LICENSES.chromium.html
+
+# Large gif(s)
+app/dist/assets/images/normal_u708*.gif
