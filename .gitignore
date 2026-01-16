@@ -11,3 +11,4 @@ LICENSES.chromium.html
 
 # Large gif(s)
 app/dist/assets/images/normal_u708*.gif
+.env
